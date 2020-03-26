@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include <locale>;
+#include "windows.h";
 using namespace std;
 
 class Formula1
@@ -18,7 +20,7 @@ public:
 	}
 	void PrintResult()
 	{
-		cout << this->result << "грн" << endl;
+		cout << endl << "=================" << endl << this->result << "грн" << endl << "=================" << endl << endl;
 	}
 private:
 	float result, newd;
@@ -45,7 +47,7 @@ public:
 	void PrintResult()
 	{
 
-		cout << endl << "=================" << this->result << "грн" << endl << "=================" << endl;
+		cout << endl << "=================" << endl << this->result << "грн" << endl << "=================" << endl << endl;
 
 
 	}
@@ -61,17 +63,17 @@ private:
 
 int main()
 {
-	setlocale(LC_ALL, "Ru");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	float Xm1, Ym1, Xm2, Ym2, Krm1, Krm2, Krm3, Krm4;
 	bool A;
 	cout << "====================================" << endl;
 	cout << "Рекламаційний калькулятор STONERWOOD" << endl;
 	cout << "====================================" << endl << endl;
-	cout << "Всі розміри обраховуються в міліметрах!!!" << endl;
+	cout << "Всі розмiри обраховуються в міліметрах!!!" << endl;
 	cout << "Калькуляція з кромкою виключно 0,6мм (2мм не підтримується)" << endl << endl;
 
-	bool repeater;
-	while (repeater = true)
+	for (int repeater = 1; repeater !=0; )
 	{
 		cout << "Пошкоджена деталь повторно в роботі?" << endl << "1 - Так\t0 - Ні" << endl;
 		cin >> A;
@@ -85,7 +87,7 @@ int main()
 			cout << "Ширина: ";
 			cin >> Ym1;
 			Ym1 = Ym1 / 1000;
-			cout << "Розмір пошкодженої деталі (Ціна закупівлі 91грн)" << endl;
+			cout << "Розмір пошкодженої деталі (ціна закупівлі 91грн)" << endl;
 			cout << "Довжина: ";
 			cin >> Xm2;
 			Xm2 = Xm2 / 1000;
@@ -113,7 +115,7 @@ int main()
 		else
 		{
 			cout << "Деталь не взята на облік..." << endl;
-			cout << "Розмір нової деталі(оптова ціна 204 грн)" << endl;
+			cout << "Розмір нової деталі (оптова ціна 204 грн)" << endl;
 			cout << "Довжина: ";
 			cin >> Xm1;
 			Xm1 = Xm1 / 1000;
